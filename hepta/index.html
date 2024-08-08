@@ -10,30 +10,51 @@
 
   <body>
     <div>
-      <div class="full-container">       
+      <div class="full-container">
         <div class="hero-section">
-            <div class="main-menu">
-                <a href="#" class="title-4 white">Hepta</a>
-                <div class="hamburger-menu" onclick="myFunction()">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
+          <div class="main-menu">
+            <a href="#" class="title-4 white">Hepta</a>
+            <div>
+              <div class="hamburger-menu" onclick="myFunction()">
+                <span id="first-hamburger-menu-line"></span>
+                <span id="second-hamburger-menu-line"></span>
+                <span id="third-hamburger-menu-line"></span>
               </div>
+              <div id="hamburger-menu-items">
+                <h1>hiiiiiiiiiii</h1>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="hamburger-menu-items">
-        <h1>hiiiiiiiiiii</h1>
       </div>
     </div>
     <script>
       function myFunction() {
-        console.log('execute');
         var x = document.getElementById("hamburger-menu-items");
+        var first = document.getElementById("first-hamburger-menu-line");
+        var second = document.getElementById("second-hamburger-menu-line");
+        var third = document.getElementById("third-hamburger-menu-line");
+        
         if (x.style.display == "block") {
           x.style.display = "none";
+
+          third.style.display = 'block'
+          first.style.transform = 'rotate(0deg)';
+          second.style.transform = 'rotate(0deg)';
+
+          third.style.backgroundColor = 'white'
+          first.style.backgroundColor = 'white';
+          second.style.backgroundColor = 'white';
         } else {
           x.style.display = "block";
+
+          third.style.display = 'none';
+          first.style.transform = 'rotate(45deg)';
+          second.style.transform = 'rotate(-45deg)';
+          
+          third.style.backgroundColor = 'black'
+          first.style.backgroundColor = 'black';
+          second.style.backgroundColor = 'black';
         }
       }
     </script>
