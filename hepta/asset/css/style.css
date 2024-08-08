@@ -3,6 +3,12 @@
 }
 
 /* CUSTOM SECTIONS */
+#hamburger-menu-items{
+    display: none;
+    background-color: white;
+    width: 100%;
+    /* height: 100dvh; */
+}
 .main-menu {
     position: absolute;
     top: 0;
@@ -22,6 +28,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .main-menu .hamburger-menu span {
@@ -33,6 +40,7 @@
 }
 
 .hero-section {
+    position: relative;
     height: 100dvh;
     min-height: 700px;
     padding: 0 1rem;

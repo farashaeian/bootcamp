@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hepta</title>
-    <link rel="stylesheet" href="./asset/css/global.css">
-    <link rel="stylesheet" href="./asset/css/style.css">
-</head>
+    <link rel="stylesheet" href="./asset/css/global.css" />
+    <link rel="stylesheet" href="./asset/css/style.css" />
+  </head>
 
-<body>
-    <div class="full-container">
-        <div class="main-menu">
-            <a href="#" class="title-4 white">Hepta</a>
-            <div class="hamburger-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  <body>
+    <div>
+      <div class="full-container">       
         <div class="hero-section">
-            
+            <div class="main-menu">
+                <a href="#" class="title-4 white">Hepta</a>
+                <div class="hamburger-menu" onclick="myFunction()">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
         </div>
+      </div>
+      <div id="hamburger-menu-items">
+        <h1>hiiiiiiiiiii</h1>
+      </div>
     </div>
-</body>
-
+    <script>
+      function myFunction() {
+        console.log('execute');
+        var x = document.getElementById("hamburger-menu-items");
+        if (x.style.display == "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+  </body>
 </html>
