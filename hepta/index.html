@@ -21,7 +21,11 @@
                 <span id="third-hamburger-menu-line"></span>
               </div>
               <div id="hamburger-menu-items">
-                <h1>hiiiiiiiiiii</h1>
+                <div class="hamburger-menu-items-holder">
+                  <a href="#"><h1>Home</h1></a>
+                  <a href="#"><h1>Hotels</h1></a>
+                  <a href="#"><h1>About Us</h1></a>
+                </div>
               </div>
             </div>
           </div>
@@ -34,31 +38,31 @@
         var first = document.getElementById("first-hamburger-menu-line");
         var second = document.getElementById("second-hamburger-menu-line");
         var third = document.getElementById("third-hamburger-menu-line");
-        
+
         if (x.style.display == "block") {
           x.style.display = "none";
 
-          third.style.display = 'block'
-          first.style.transform = 'rotate(0deg)';
-          second.style.transform = 'rotate(0deg)';
+          third.style.display = "block";
+          first.style.transform = "rotate(0deg)";
+          second.style.transform = "rotate(0deg)";
 
-          second.style.top = '50%'
+          second.style.top = "50%";
 
-          third.style.backgroundColor = 'white'
-          first.style.backgroundColor = 'white';
-          second.style.backgroundColor = 'white';
+          third.style.backgroundColor = "white";
+          first.style.backgroundColor = "white";
+          second.style.backgroundColor = "white";
         } else {
           x.style.display = "block";
 
-          third.style.display = 'none';
-          first.style.transform = 'rotate(45deg)';
-          second.style.transform = 'rotate(-45deg)';
+          third.style.display = "none";
+          first.style.transform = "rotate(45deg)";
+          second.style.transform = "rotate(-45deg)";
 
-          second.style.top = '5%'
-          
-          third.style.backgroundColor = 'black'
-          first.style.backgroundColor = 'black';
-          second.style.backgroundColor = 'black';
+          second.style.top = "5%";
+
+          third.style.backgroundColor = "black";
+          first.style.backgroundColor = "black";
+          second.style.backgroundColor = "black";
         }
       }
     </script>
