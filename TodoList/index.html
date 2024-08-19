@@ -44,13 +44,19 @@
 
         function addItem() {
             const item = document.createElement('LI')
-            item.textContent = input.value
+            const dataBox = document.createElement('SPAN')
+            dataBox.classList.add('data-box')
+            const span = document.createElement('SPAN')
+            span.textContent = input.value
+            span.classList.add('task-text')
+            dataBox.appendChild(span)           
             const deleteButton = addDeletButton()
-            item.appendChild(deleteButton)
-            item.addEventListener('click', function () {
-                item.classList.toggle('done')
+            dataBox.appendChild(deleteButton)
+            dataBox.addEventListener('click', function () {
+                span.classList.toggle('done')
                 input.focus()
             })
+            item.appendChild(dataBox)
             return item
         }
 

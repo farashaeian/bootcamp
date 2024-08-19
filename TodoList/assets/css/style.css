@@ -12,10 +12,17 @@
 }
 
 .list li {
-    cursor: pointer;
+    margin-bottom: 1rem;
 }
 
-.list li:hover{
+.list li .data-box .task-text {
+    cursor: pointer;
+    display: inline-block;
+    padding-left: 3px;
+    padding-right: 10px;
+}
+
+.list li .data-box .task-text:hover {
     color: dimgray;
 }
 
