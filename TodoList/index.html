@@ -36,7 +36,7 @@
             deleteButton.textContent = 'x'
             deleteButton.classList.add('delete-button')
             deleteButton.addEventListener('click', function (e) {
-                e.target.parentNode.remove()
+                e.target.parentNode.parentNode.remove()
                 input.focus()
             })
             return deleteButton
