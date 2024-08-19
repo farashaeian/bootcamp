@@ -11,6 +11,14 @@
     border: red solid 2px;
 }
 
+.list li {
+    cursor: pointer;
+}
+
+.list li:hover{
+    color: dimgray;
+}
+
 .done {
     text-decoration: line-through;
     color: green;

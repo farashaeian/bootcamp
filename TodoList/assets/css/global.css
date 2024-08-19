@@ -40,3 +40,7 @@ a {
 .uppercase{
     text-transform: uppercase;
 }
+
+input, button{
+    padding: 5px;
+}
