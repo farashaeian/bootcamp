@@ -1,14 +1,23 @@
+.add {
+    font-weight: bold;
+}
+
 .delete-button {
-    color: red;
+    display: inline-block;
     margin-left: 0.75rem;
     padding: 0.025rem 0.25rem;
-    border: red solid 1px;
     border-radius: 3px;
+    color: red;
+    border: red solid 1px;
     cursor: pointer;
 }
 
 .delete-button:hover {
     border: red solid 2px;
+}
+
+.list {
+    padding-inline-start: 18px
 }
 
 .list li {
