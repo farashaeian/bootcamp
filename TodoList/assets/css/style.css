@@ -1,0 +1,17 @@
+.delete-button {
+    color: red;
+    margin-left: 0.75rem;
+    padding: 0.025rem 0.25rem;
+    border: red solid 1px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    border: red solid 2px;
+}
+
+.done {
+    text-decoration: line-through;
+    color: green;
+}

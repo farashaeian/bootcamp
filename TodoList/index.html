@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <input type="text" id="input" />
+    <button class="add" onclick="add()">ADD</button>
+
+    <script>
+        const input = document.getElementById('input')
+        input.focus()
+        const list = document.createElement('UL')
+        document.body.appendChild(list)
+
+        function clearInput() {
+            input.value = ''
+            input.focus()
+        }
+
+        function addDeletButton() {
+            const deleteButton = document.createElement('SPAN')
+            deleteButton.textContent = 'x'
+            deleteButton.classList.add('delete-button')
+            deleteButton.addEventListener('click', function (e) {
+                e.target.parentNode.remove()
+                input.focus()
+            })
+            return deleteButton
+        }
+        function addItem() {
+            const item = document.createElement('LI')
+            item.textContent = input.value
+            const deleteButton = addDeletButton()
+            item.appendChild(deleteButton)
+            item.addEventListener('click', function () {
+                item.classList.toggle('done')
+                input.focus()
+            })
+            return item
+        }
+
+        function add() {
+            if (input.value.trim() == '') {
+                alert('choose a name for the task!')
+                clearInput()
+                return
+            }
+            if (input.value.trim().length >= 3) {
+                const item = addItem()
+                list.appendChild(item)
+                clearInput()
+                return
+            }
+            else {
+                alert('atleast 3 characters is needed!')
+                input.focus()
+            }
+        }
+    </script>
+</body>
+
+</html>
