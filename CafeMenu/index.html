@@ -54,49 +54,67 @@
             {
                 id: 1,
                 title: 'pizza',
-                category: category[0].title
+                category: category[0].title,
+                src:"/assets/images/300x200.jpg",
             },
             {
                 id: 2,
                 title: 'hamburger',
-                category: category[0].title
+                category: category[0].title,
+                src:"/assets/images/300x200.jpg",
             },
             {
                 id: 3,
                 title: 'rice',
-                category: category[0].title
+                category: category[0].title,
+                src:"/assets/images/300x200.jpg",
             },
             {
                 id: 4,
                 title: 'stake',
-                category: category[0].title
+                category: category[0].title,
+                src:"/assets/images/300x200.jpg",
             },
             {
                 id: 5,
                 title: 'fries',
-                category: category[0].title
+                category: category[0].title,
+                src:"/assets/images/300x200.jpg",
             },
             {
                 id: 6,
                 title: 'wine',
-                category: category[1].title
+                category: category[1].title,
+                src:"/assets/images/300x200.jpg",
             },
             {
                 id: 7,
                 title: 'Coca',
-                category: category[1].title
+                category: category[1].title,
+                src:"/assets/images/300x200.jpg",
             },
             {
                 id: 8,
                 title: 'water',
-                category: category[1].title
+                category: category[1].title,
+                src:"/assets/images/300x200.jpg",
             },
             {
                 id: 9,
                 title: 'juice',
-                category: category[1].title
+                category: category[1].title,
+                src:"/assets/images/300x200.jpg",
             }
         ]
+
+        const createItem = (item) => {
+            const card = document.createElement('DIV')
+            const image = document.createElement('IMG')
+            image.src = item.src;
+            card.appendChild(image);
+            card.innerHTML = item.title;
+            return card
+        }
 
         const showItems = (categoryTitle) => {
             const menu = document.querySelector('.menu')
@@ -108,8 +126,7 @@
                 menuItems = data.filter((item) => item.category === categoryTitle);
             }
             menuItems.forEach((item) => {
-                const div = document.createElement('DIV');
-                div.innerHTML = item.title;
+                const div = createItem(item);
                 menu.appendChild(div);
             });
         }
