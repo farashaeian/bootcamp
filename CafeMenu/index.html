@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- <script
+        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#C59D5F',
+                        caption: '#8A9EB3',
+                        title: '#415466',
+
+                    }
+                }
+            }
+        }
+    </script> -->
+</head>
+
+<body>
+    <div class="header">
+        <div class="title flex items-end justify-center">
+            <h1 class="text-title">Our Menu</h1>
+        </div>
+        <div>
+            <button class="all" onclick="showItems('all')">All</button>
+            <button class="launch" onclick="showItems('launch')">Launch</button>
+            <button class="drinks" onclick="showItems('drinks')">Drinks</button>
+        </div>
+    </div>
+    <div class="menu grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-x-4 md:gap-y-6">
+
+    </div>
+    <script>
+        const category = [
+            {
+                id: 1,
+                title: 'launch'
+            },
+            {
+                id: 2,
+                title: 'drinks'
+            }
+        ]
+        const data = [
+            {
+                id: 1,
+                title: 'pizza',
+                category: category[0].title
+            },
+            {
+                id: 2,
+                title: 'hamburger',
+                category: category[0].title
+            },
+            {
+                id: 3,
+                title: 'rice',
+                category: category[0].title
+            },
+            {
+                id: 4,
+                title: 'stake',
+                category: category[0].title
+            },
+            {
+                id: 5,
+                title: 'fries',
+                category: category[0].title
+            },
+            {
+                id: 6,
+                title: 'wine',
+                category: category[1].title
+            },
+            {
+                id: 7,
+                title: 'Coca',
+                category: category[1].title
+            },
+            {
+                id: 8,
+                title: 'water',
+                category: category[1].title
+            },
+            {
+                id: 9,
+                title: 'juice',
+                category: category[1].title
+            }
+        ]
+
+        const showItems = (categoryTitle) => {
+            const menu = document.getElementsByClassName('menu')[0]
+            menu.innerHTML = ''
+            let menuItems = []
+            if (categoryTitle == 'all') {
+                menuItems = data
+                console.log(menuItems);
+            } else {
+                menuItems = data.filter((item) => item.category === categoryTitle);
+            }
+            menuItems.forEach((item) => {
+                const div = document.createElement('DIV');
+                div.innerHTML = item.title;
+                menu.appendChild(div);
+            });
+        }
+    </script>
+</body>
+
+</html>

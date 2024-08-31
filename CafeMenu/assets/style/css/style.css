@@ -1,0 +1,7 @@
+.title h1::after{
+content: '';
+width: 100px;
+height: 5px;
+background-color: #C59D5F;
+display: block;
+}
