@@ -99,12 +99,11 @@
         ]
 
         const showItems = (categoryTitle) => {
-            const menu = document.getElementsByClassName('menu')[0]
+            const menu = document.querySelector('.menu')
             menu.innerHTML = ''
             let menuItems = []
             if (categoryTitle == 'all') {
                 menuItems = data
-                console.log(menuItems);
             } else {
                 menuItems = data.filter((item) => item.category === categoryTitle);
             }
