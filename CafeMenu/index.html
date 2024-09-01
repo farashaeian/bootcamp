@@ -39,7 +39,7 @@
                 id: 1,
                 title: 'pizza',
                 category: category[0].title,
-                src: "./assets/images/300x200.jpg",
+                src: "",
                 caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
@@ -74,7 +74,7 @@
                 id: 6,
                 title: 'wine',
                 category: category[1].title,
-                src: "./assets/images/300x200.jpg",
+                src: "",
                 caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
@@ -104,7 +104,9 @@
             const card = document.createElement('DIV')
             card.classList.add('card')
             const image = document.createElement('IMG')
-            image.src = item.src;
+            let imageSrc = item.src
+            if(!item.src){imageSrc='./assets/images/300x200.jpg'}
+            image.src = imageSrc;
             card.appendChild(image);
             const textPart = document.createElement('DIV')
             const title = document.createElement('H3')
