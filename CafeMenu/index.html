@@ -20,9 +20,7 @@
             <button class="drinks" onclick="showItems('drinks')">Drinks</button>
         </div>
     </div>
-    <div class="menu">
-
-    </div>
+    <div class="menu"></div>
     <script>
         const category = [
             {
@@ -115,6 +113,7 @@
             const caption = document.createElement('P')
             caption.innerHTML = item.caption
             textPart.appendChild(caption)
+            textPart.classList.add('text-part')
             card.appendChild(textPart);
             return card
         }
