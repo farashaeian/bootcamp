@@ -2,7 +2,7 @@
     font-size: 16px;
 }
 
-html{
+html {
     overflow-x: hidden;
 }
 
@@ -10,6 +10,7 @@ body {
     position: relative;
     margin: 0;
     overflow-x: hidden;
+    padding: 1rem;
 }
 
 a {
@@ -20,4 +21,10 @@ ul {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 2rem;
+    }
 }

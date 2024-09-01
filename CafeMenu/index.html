@@ -5,38 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu</title>
-    <link rel="stylesheet" href="./assets/css/global.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!-- <script
-        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#C59D5F',
-                        caption: '#8A9EB3',
-                        title: '#415466',
-
-                    }
-                }
-            }
-        }
-    </script> -->
+    <link rel="stylesheet" href="./assets/style/css/global.css" />
+    <link rel="stylesheet" href="./assets/style/css/style.css" />
 </head>
 
 <body>
     <div class="header">
-        <div class="title flex items-end justify-center">
+        <div class="title">
             <h1 class="text-title">Our Menu</h1>
         </div>
-        <div>
+        <div class="buttons">
             <button class="all" onclick="showItems('all')">All</button>
             <button class="launch" onclick="showItems('launch')">Launch</button>
             <button class="drinks" onclick="showItems('drinks')">Drinks</button>
         </div>
     </div>
-    <div class="menu grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-x-4 md:gap-y-6">
+    <div class="menu">
 
     </div>
     <script>
@@ -55,64 +39,81 @@
                 id: 1,
                 title: 'pizza',
                 category: category[0].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
                 id: 2,
                 title: 'hamburger',
                 category: category[0].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
                 id: 3,
                 title: 'rice',
                 category: category[0].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
                 id: 4,
                 title: 'stake',
                 category: category[0].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
                 id: 5,
                 title: 'fries',
                 category: category[0].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
                 id: 6,
                 title: 'wine',
                 category: category[1].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
                 id: 7,
                 title: 'Coca',
                 category: category[1].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
                 id: 8,
                 title: 'water',
                 category: category[1].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             },
             {
                 id: 9,
                 title: 'juice',
                 category: category[1].title,
-                src:"/assets/images/300x200.jpg",
+                src: "./assets/images/300x200.jpg",
+                caption: 'this text is caption. this text is caption. this text is caption. this text is caption.',
             }
         ]
 
         const createItem = (item) => {
             const card = document.createElement('DIV')
+            card.classList.add('card')
             const image = document.createElement('IMG')
             image.src = item.src;
             card.appendChild(image);
-            card.innerHTML = item.title;
+            const textPart = document.createElement('DIV')
+            const title = document.createElement('H3')
+            title.innerHTML = item.title;
+            textPart.appendChild(title);
+            const caption = document.createElement('P')
+            caption.innerHTML = item.caption
+            textPart.appendChild(caption)
+            card.appendChild(textPart);
             return card
         }
 
@@ -130,6 +131,8 @@
                 menu.appendChild(div);
             });
         }
+
+        showItems('all')
     </script>
 </body>
 

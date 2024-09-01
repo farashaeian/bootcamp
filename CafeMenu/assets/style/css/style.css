@@ -1,7 +1,58 @@
-.title h1::after{
-content: '';
-width: 100px;
-height: 5px;
-background-color: #C59D5F;
-display: block;
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.title h1::after {
+    content: '';
+    width: 100%;
+    height: 5px;
+    background-color: #C59D5F;
+    display: block;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+.menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+.buttons {
+    margin-bottom: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0.5rem;
+
+    padding: 1rem;
+    background-color: #f0f0f0;
+    /* Optional, to make sure you can see the card */
+    border-radius: 8px;
+    /* Optional styling */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional styling */
+}
+
+@media (min-width: 768px) {
+    .menu {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1rem;
+        row-gap: 1.5rem;
+    }
+
+    .card {
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+    }
 }
