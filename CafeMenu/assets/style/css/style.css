@@ -1,8 +1,9 @@
-.title{
+.title {
     display: flex;
     justify-content: center;
     align-items: end;
 }
+
 .title h1::after {
     content: '';
     width: 100%;
@@ -11,20 +12,32 @@
     display: block;
 }
 
-.buttons{
+.buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
-}
-.menu {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
-.buttons {
-    margin-bottom: 1rem;
+.buttons button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #C59D5F;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+.buttons button:hover {
+    background-color: #C59D5F;
+    color: white;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
 .card {
@@ -33,14 +46,15 @@
     justify-content: center;
     align-items: start;
     gap: 0.5rem;
-
     padding: 1rem;
     background-color: #f0f0f0;
-    /* Optional, to make sure you can see the card */
     border-radius: 8px;
-    /* Optional styling */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Optional styling */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
 }
 
 @media (min-width: 768px) {
@@ -54,5 +68,26 @@
         flex-direction: row;
         justify-content: start;
         align-items: start;
+    }
+}
+
+@media (min-width: 770px) and (max-width: 830px) {
+    .card {
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 1rem;
+        overflow: hidden; /* Ensure content does not overflow */
+    }
+
+    .card img {
+        width: 100%; /* Ensures the image doesn't overflow */
+        height: auto;
+    }
+
+    .card h3, .card p {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
     }
 }
