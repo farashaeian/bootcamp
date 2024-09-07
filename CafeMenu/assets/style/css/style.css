@@ -50,6 +50,8 @@
     background-color: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Equal height enforcement for all cards in the same row */
+    /* height: 100%; */
 }
 
 .card img {
@@ -57,12 +59,16 @@
     height: auto;
     border-radius: 5px;
     border: 2px solid #C59D5F;
+    /* Ensure images fill the container while keeping aspect ratio */
+    max-height: 200px;
+    object-fit: cover;
 }
 
-.card .text-part{
+.card .text-part {
     max-height: 200px;
     display: -webkit-box;
-    -webkit-line-clamp: 8; /* Number of lines to display before truncating */
+    -webkit-line-clamp: 8;
+    /* Number of lines to display before truncating */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -86,17 +92,20 @@
     .card {
         flex-direction: column;
         justify-content: center;
-        align-items: start;
+        align-items: center;
         padding: 1rem;
-        overflow: hidden; /* Ensure content does not overflow */
+        overflow: hidden;
+        /* Ensure content does not overflow */
     }
 
     .card img {
-        width: 100%; /* Ensures the image doesn't overflow */
+        width: 100%;
+        /* Ensures the image doesn't overflow */
         height: auto;
     }
 
-    .card h3, .card p {
+    .card h3,
+    .card p {
         overflow-wrap: break-word;
         word-wrap: break-word;
         word-break: break-word;
