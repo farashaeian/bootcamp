@@ -1,0 +1,12 @@
+.movies ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+.movies ul li {
+  width: 25%;
+  padding: 0 10px;
+}
+.movies li img {
+  width: 100%;
+  height: auto;
+}
