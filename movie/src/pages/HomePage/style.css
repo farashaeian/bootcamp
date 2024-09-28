@@ -1,6 +1,7 @@
 .movies ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .movies ul li {
   width: 25%;

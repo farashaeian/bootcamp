@@ -38,7 +38,7 @@ const Movie = () => {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      window.scrollTo(0,0)
+      window.scrollTo(0, 0);
 
       try {
         const response = await axios.get(
@@ -55,7 +55,11 @@ const Movie = () => {
       }
 
       axios
-        .get(`https://moviesapi.codingfront.dev/api/v1/movies?page=${parseInt(Math.random()*21)}`)
+        .get(
+          `https://moviesapi.codingfront.dev/api/v1/movies?page=${parseInt(
+            Math.random() * 21
+          )}`
+        )
         .then((response) => {
           setMovies(response.data.data);
         })
@@ -78,11 +82,17 @@ const Movie = () => {
     });
   };
   return (
-    <>
-      {movie ? movie.title : "not found"}
-      <hr/>
+    <div className="container" style={{ display: "flex", justifyContent:"space-between"}}>
+      {movie ? (
+        <div style={{ display: "flex", flexDirection:"column" }}>
+          <h3>{movie.title}</h3>
+          <img src={movie.poster} />
+        </div>
+      ) : (
+        "not found"
+      )}
       <div className="related">{renderRelatedMovies()}</div>
-    </>
+    </div>
   );
 };
 export default Movie;
