@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, createSearchParams, useSearchParams } from "react-router-dom";
 import Movie from "../Movie";
 import { Pagination, Spin } from "antd";
 import "./style.css";
 
 const HomePage = () => {
+  const [loading, setLoading] = useState(true);
+  const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState({
     data: [],
     metadata: {
@@ -15,7 +17,6 @@ const HomePage = () => {
       total_count: 1,
     },
   });
-  const [loading, setLoading] = useState(true);
 
   const getApi = (page = 1) => {
     axios
@@ -28,8 +29,9 @@ const HomePage = () => {
         setLoading(false);
       });
   };
+
   useEffect(() => {
-    getApi();
+    getApi(searchParams.get("page"));
   }, []);
 
   const renderFarn = () => {
@@ -47,6 +49,7 @@ const HomePage = () => {
   };
 
   const changePage = (current, size) => {
+    setSearchParams(createSearchParams({ page: current }));
     getApi(current);
   };
 
@@ -59,7 +62,7 @@ const HomePage = () => {
         </div>
         <div style={{ padding: "100px 0" }}>
           <Pagination
-          align="center"
+            align="center"
             current={movies.metadata.current_page}
             total={movies.metadata.total_count}
             pageSize={movies.metadata.per_page}

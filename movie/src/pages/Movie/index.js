@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const Movie = () => {
   const { movieId } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [movies, setMovies] = useState([]);
   const [movie, setMovie] = useState({
     actors: "",
     awards: "",
@@ -37,6 +38,8 @@ const Movie = () => {
 
   useEffect(() => {
     const fetchMovies = async () => {
+      window.scrollTo(0,0)
+
       try {
         const response = await axios.get(
           `https://moviesapi.codingfront.dev/api/v1/movies/${movieId}`
@@ -50,14 +53,36 @@ const Movie = () => {
       } finally {
         setLoading(false);
       }
+
+      axios
+        .get(`https://moviesapi.codingfront.dev/api/v1/movies?page=${parseInt(Math.random()*21)}`)
+        .then((response) => {
+          setMovies(response.data.data);
+        })
+        .catch(() => {});
     };
 
     fetchMovies();
-  }, []);
+  }, [movieId]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  return <>{movie ? movie.title : "not found"}</>;
+  const renderRelatedMovies = () => {
+    return movies.map(({ title, poster, id }, index) => {
+      return (
+        <div key={id}>
+          <Link to={`/movies/${id}`}>{title}</Link>
+        </div>
+      );
+    });
+  };
+  return (
+    <>
+      {movie ? movie.title : "not found"}
+      <hr/>
+      <div className="related">{renderRelatedMovies()}</div>
+    </>
+  );
 };
 export default Movie;

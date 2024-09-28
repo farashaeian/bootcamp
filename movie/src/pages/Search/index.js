@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useSearchParams, createSearchParams } from "react-router-dom";
 
 const Search = () => {
+  const [queryStrings, setQueryStings] = useSearchParams();
   const [data, setData] = useState({
     data: [],
     metadata: {},
@@ -13,10 +14,25 @@ const Search = () => {
         `https://moviesapi.codingfront.dev/api/v1/movies?q=${e.target.value}`
       )
       .then((response) => {
+        setQueryStings(createSearchParams({ key: e.target.value }));
         setData(response.data);
       })
       .catch((error) => {});
   };
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://moviesapi.codingfront.dev/api/v1/movies?q=${queryStrings.get(
+          "key"
+        )}`
+      )
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {});
+  }, []);
+
   const renderFarms = () => {
     if (data.data.length == 0) {
       return <h3>The Movie Is Not Found!</h3>;
@@ -36,6 +52,7 @@ const Search = () => {
       <div className="container">
         <h1>Search</h1>
         <input
+          // value={queryStrings.get("key") ? queryStrings.get("key") : ""}
           onChange={type}
           style={{ padding: "10px", width: "100%", fontSize: "30px" }}
           placeholder="Enter The Movie Title..."
