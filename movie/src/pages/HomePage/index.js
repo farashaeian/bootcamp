@@ -57,7 +57,7 @@ const HomePage = () => {
     <div className="container">
       <Spin spinning={loading}>
         <div className="movies">
-          <h1>home</h1>
+          <h1>Home</h1>
           <ul>{renderFarn()}</ul>
         </div>
         <div style={{ padding: "100px 0" }}>

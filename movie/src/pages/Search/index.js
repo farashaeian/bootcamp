@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useSearchParams, createSearchParams } from "react-router-dom";
-
+import './style.css'
 const Search = () => {
   const [queryStrings, setQueryStings] = useSearchParams();
   const [data, setData] = useState({
@@ -48,13 +48,12 @@ const Search = () => {
     });
   };
   return (
-    <div className="search">
-      <div className="container">
+    <div className="container">
+      <div className="search">
         <h1>Search</h1>
         <input
           // value={queryStrings.get("key") ? queryStrings.get("key") : ""}
           onChange={type}
-          style={{ padding: "10px", width: "100%", fontSize: "30px" }}
           placeholder="Enter The Movie Title..."
         />
         <div className="movies">

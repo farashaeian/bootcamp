@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import './style.css'
 const Movie = () => {
   const { movieId } = useParams();
   const [loading, setLoading] = useState(true);
@@ -82,10 +83,10 @@ const Movie = () => {
     });
   };
   return (
-    <div className="container" style={{ display: "flex", justifyContent:"space-between"}}>
+    <div className="container movi-container">
       {movie ? (
-        <div style={{ display: "flex", flexDirection:"column" }}>
-          <h3>{movie.title}</h3>
+        <div className="movie">
+          <h2>{movie.title}</h2>
           <img src={movie.poster} />
         </div>
       ) : (

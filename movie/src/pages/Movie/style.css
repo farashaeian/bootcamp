@@ -1,0 +1,32 @@
+.movi-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.movi-container .movie,
+.movi-container .related {
+  width: 50%;
+}
+.movie {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.movie img {
+  border-radius: 0.5rem;
+}
+
+.related {
+  text-align: center;
+}
+@media (max-width: 780px) {
+  .movi-container {
+    flex-direction: column;
+  }
+  .movi-container .movie,
+  .movi-container .related {
+    width: 100%;
+  }
+}
