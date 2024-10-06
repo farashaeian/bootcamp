@@ -3,8 +3,9 @@ export const colorPallete = {
     secondaryColor : 'gray',
     primaryBackground : '#1B1717',
     primaryRed :'#CE1212',
+    primaryGray: '#EEEBDD',
     gray40: 'background: rgba(238, 235, 221, 0.4)',
-    gray60: 'background: rgba(238, 235, 221, 0.6)'
+    gray60: 'background: rgba(238, 235, 221, 0.6)',
 }
 export const typography = {
     baseFont : '16px',
