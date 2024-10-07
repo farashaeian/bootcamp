@@ -9,6 +9,7 @@ body{
     margin: 0px;
     background-color: ${colorPallete.primaryBackground};
     color: ${colorPallete.primaryColor};
+    font-family: 'Roboto';
 }
 a {
     text-decoration: none;
